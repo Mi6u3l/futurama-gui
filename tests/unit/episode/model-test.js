@@ -9,6 +9,7 @@ module('Unit | Model | episode', function(hooks) {
   test('it exists', function(assert) {
     let store = this.owner.lookup('service:store');
     let model = run(() => store.createRecord('episode', {}));
+
     assert.ok(model);
   });
 });
