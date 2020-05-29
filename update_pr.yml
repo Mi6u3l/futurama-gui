@@ -1,4 +1,4 @@
-name: "Update Pull Request"
+name: Pull Request Updater GitHub Action
 
 on: pull_request
 
