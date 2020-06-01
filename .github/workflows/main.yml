@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: update_pr
       id: update_pr
-      uses: actions/preview-app-action@v1.0.1
+      uses: preview-app-action
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         body-template: '[Preview App](https://app.dev.linkfire.co/index.html:pull-%pr_number%)'
