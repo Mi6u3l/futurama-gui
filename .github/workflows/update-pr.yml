@@ -9,7 +9,7 @@ jobs:
     - uses: tzkhan/pr-update-action@v1.1.1
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"                   # required - allows the action to make calls to GitHub's rest API
-        branch-regex: '-\d+'
+        branch-regex: '()'
         lowercase-branch: true                                      # optional - whether to lowercase branch name before matching
         title-template: '[%branch%]'                                # required - text template to update title with
         replace-title: false                                        # optional - whether to prefix or replace title with title-template
