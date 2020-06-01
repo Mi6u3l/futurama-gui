@@ -5,10 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Preview app
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Preview app action
-      uses: ./.github/actions/preview-app-action
+    - name: Preview app action step
+      uses: preview-app-action@v1.0.1
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         body-template: '[Preview App](https://app.dev.linkfire.co/index.html:pull-%pr_number%)'
