@@ -8,6 +8,7 @@ jobs:
     steps:
     - uses: tzkhan/pr-update-action@v1.1.1
       with:
+        PR_NUMBER: "${{ github.event.pull_request.number }}"
         repo-token: "${{ secrets.GITHUB_TOKEN }}"                   # required - allows the action to make calls to GitHub's rest API
         branch-regex: '-\d+|NO_ISSUE'
         lowercase-branch: true                                      # optional - whether to lowercase branch name before matching
@@ -15,8 +16,7 @@ jobs:
         replace-title: false                                        # optional - whether to prefix or replace title with title-template
         title-prefix-space: true                                    # optional - whether to add a space after title prefix
         uppercase-title: true                                       # optional - whether to uppercase matched branch info in title
-        pr-number: "${{ github.event.number }}"
-        body-template: '[Preview App](https://browse/ticket/%pr_number%)' # required - text template to prefix body
+        body-template: '[Preview App](https://app.dev.linkfire.co/index.html:pull-%PR_NUMBER%)' # required - text template to prefix body
         replace-body: false                                         # optional - whether to prefix or replace body with body-template
         body-prefix-newline-count: 2                                # optional - number of newlines to insert after body prefix
         uppercase-body: true                                        # optional - whether to uppercase matched branch info in body
