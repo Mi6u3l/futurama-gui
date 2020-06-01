@@ -1,13 +1,17 @@
-name: "Update Pull Request"
 
-on: pull_request
+on: [pull_request]
 
 jobs:
-  update_pr:
+  preview-app-action:
     runs-on: ubuntu-latest
+    name: Preview app
     steps:
-      - uses: preview-app-action@v1.0.1
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          body-template: '[Preview App](https://app.dev.linkfire.co/index.html:pull-%pr_number%)'
-         
+    - name: update_pr
+      id: update_pr
+      uses: actions/preview-app-action@v1.0.1
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        body-template: '[Preview App](https://app.dev.linkfire.co/index.html:pull-%pr_number%)'
+  
+      
+name: "Update Pull Request"
