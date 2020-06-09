@@ -10,4 +10,4 @@ jobs:
       uses: Mi6u3l/preview-app-action@v5
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        body-template: '[Preview App](https://app.dev.linkfire.co/index.html:pull-%pr_number%)'
+        body-template: '[Preview App](https://app.dev.linkfire.co/#/index.html:pull-%pr_number%)'
